@@ -12,6 +12,7 @@ const port = process.env.PORT || 8080;
 //middleware
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use('/api/books',bookRoute);
 
 //create a logger
 const logger = winston.createLogger({
@@ -28,10 +29,9 @@ const logger = winston.createLogger({
     ],
     
   });
-  console.log(dotenv.parsed.MONGO_URI);
 
 //routes
-app.use('/api/books',bookRoute)
+
 
 mongoose.connect(URI,{useNewUrlParser:true})
 .then(()=>{logger.log('info',"connected to mongo db")}).catch((err)=>{

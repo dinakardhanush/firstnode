@@ -2,11 +2,11 @@ const express = require('express');
 const res = require('express/lib/response');
 const mongoose = require('mongoose');
 const app = express();
-const port = 8080;
 const bookRoute = require('./routes/books')
 const winston = require('winston');
 const dotenv=require('dotenv').config();
 const URI = process.env.MONGO_URI;
+const port = process.env.PORT || 8080;
 
 
 //middleware

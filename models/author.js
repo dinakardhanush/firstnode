@@ -1,3 +1,4 @@
+//Here we are going to receive data from mongodb so we are using mongoose.
 const mongoose = require('mongoose');
 
 
@@ -16,4 +17,5 @@ const AuthorSchema = mongoose.Schema({
     }
 })
 
+//We should export model schema like below
 module.exports = mongoose.model("Author",AuthorSchema)
